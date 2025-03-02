@@ -4,9 +4,48 @@ import { gql } from "@apollo/client";
 export const GET_PRODUCTS = gql`
   query GetProducts {
     products {
-      name
       id
+      name
       in_stock
+      description
+      category_id
+      brand
+      category
+      images
+      price
+    }
+  }
+`;
+
+export const GET_TECH_PRODUCTS = gql`
+  query GetTechProducts {
+    products(category: "tech") {
+      id
+      name
+      in_stock
+      description
+      category_id
+      brand
+      category
+      images
+      price
+    }
+  }
+`;
+
+
+export const GET_CLOTHES_PRODUCTS = gql`
+  query GetTechProducts {
+    products(category: "clothes") {
+      id
+      name
+      in_stock
+      description
+      category_id
+      brand
+      category
+      images
+      price
     }
   }
 `;
